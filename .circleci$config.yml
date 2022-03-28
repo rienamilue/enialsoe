@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  RunMain:
+    docker:
+      - image: cimg/python:3.5.8
+
+    steps:
+    - run: chmod u+x *
+    - run: python --version
+    - run: ls
+    - run: sleep 1s
+    parallelism: 1
+
+
+
+
+
+workflows:
+  version: 2
+  Run-All:
+    jobs:
+    - RunMain
